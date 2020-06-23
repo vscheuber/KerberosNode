@@ -25,7 +25,16 @@ authenticate to AM without having to provide the login information again. Users 
 Windows Authentication in Internet Explorer or Microsoft Edge to benefit from single sign on when logged on to a
 Windows desktop.
 
-Download a release build fom the *release* tab or clone this repository to build your own release. Copy the .jar file from your download location or the *./target* directory (if you built it yourself) into the *../web-container/webapps/openam/WEB-INF/lib* directory where AM is deployed.  Restart the web container to pick up the new node.  The node will then appear in the authentication trees components palette.
+*Why would you used this node over the <a href="https://github.com/FrankGasparovic/Windows-Desktop-SSO-Node">Windows Desktop SSO Node</a>? The current version of the WDSSO node is not thread safe. 
+If you run multiple instances of the node with different configurations across multiple trees, you will see 
+unpredictable behavior and errors. This will worsen the heavier the load is. Additionally, The WDSSO node requires 
+domains to have a trust relationship in order for multi-domain logins to work. The Kerberos node remedies both of 
+those issues.*
+
+Download a release build fom the *release* tab or clone this repository to build your own release. Copy the .jar 
+file from your download location or the *./target* directory (if you built it yourself) into the 
+*../web-container/webapps/openam/WEB-INF/lib* directory where AM is deployed.  Restart the web container to pick 
+up the new node.  The node will then appear in the authentication trees components palette.
 
 ## Related Nodes
 - <a href="https://github.com/FrankGasparovic/Windows-Desktop-SSO-Node">Windows Desktop SSO Node</a>
